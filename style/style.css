@@ -1,3 +1,73 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+body{
+    background-image: url("../images/bg.png");
+    background-position: center center;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+}
+.main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.container {
+    width: 50%;
+    background: rgb(255 255 255 / 35%);
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+form.addTodoForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+form.addTodoForm input {
+    border: none;
+    padding: 10px;
+}
+input[type="text"] {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    color:#464646;
+    width:75%;
+    font-size: 18px;
+}
+input[type="submit"] {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background: #14b8a6;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 18px;
+}
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 8px 2px rgb(20 184 166 / 75%);
+}
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content {
+    background: #fff;
+    width: 94%;
+    border-radius: 8px;
+    margin: 5px 0;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.content img {
+    width: 5%;
+    cursor: pointer;
+}
+.content p {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+}
