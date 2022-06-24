@@ -17,22 +17,24 @@
                 <input type="text" placeholder="Write todo">
                 <input type="submit" value="Add to list">
             </form>
-            <div class="items">
+
+            <!-- Retrieve dynamic todo list from database start -->
+            <?php
+                $conn = mysqli_connect('localhost', 'root', '', 'todo_list') or die("Database connection failed!");
+                $sql = "SELECT * FROM todo";
+                $retval = mysqli_query($conn, $sql) or die("Database query error!");
+
+            while($list = mysqli_fetch_assoc($retval)){?>
+                <div class="items">
                 <div class="content">
                     <img src="./images/check.svg" alt="Check">
                     <img src="./images/uncheck.svg" alt="uncheck">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                    <p><?php echo $list["items"];?></p>
                     <img src="./images/delete.svg" alt="delete">
                 </div>
             </div>
-            <div class="items">
-                <div class="content">
-                    <img src="./images/check.svg" alt="Check">
-                    <img src="./images/uncheck.svg" alt="uncheck">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-                    <img src="./images/delete.svg" alt="delete">
-                </div>
-            </div>
+            <?php }?>
+            <!-- Retrieve dynamic todo list from database end -->
         </div>
     </div>
 </body>
