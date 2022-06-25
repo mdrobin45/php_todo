@@ -3,6 +3,7 @@ body{
     background-image: url("../images/bg.png");
     background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Nunito', sans-serif;
 }
 .main {
@@ -62,12 +63,29 @@ input[type="text"]:focus {
     justify-content: space-between;
     align-items: center;
 }
-.content img {
-    width: 5%;
-    cursor: pointer;
+.content a {
+    display: block;
+    text-align: right;
+}
+.content a img{
+    width:50%;
 }
 .content p {
     display: block;
     margin: 0;
     font-size: 18px;
+    margin-left: 10px;
+}
+.content-left {
+    width: 90%;
+}
+.content-left img{
+    cursor: pointer;
+}
+.content-right {
+    width: 10%;
+}
+.checked{
+    text-decoration: line-through;
+    color: red;
 }
